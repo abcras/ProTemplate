@@ -21,6 +21,7 @@ import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import sts2silent.cards.Defend;
 import sts2silent.cards.Neutralize;
 import sts2silent.cards.Strike;
+import sts2silent.cards.Survivor;
 import sts2silent.relics.TodoItem;
 
 import java.util.ArrayList;
@@ -60,13 +61,15 @@ public class CharacterFile extends CustomPlayer {
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
             retVal.add(Strike.ID);
         }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 6; i++) {
             retVal.add(Defend.ID);
         }
         retVal.add(Neutralize.ID);
+        retVal.add(Survivor.ID);
+
         return retVal;
     }
 
