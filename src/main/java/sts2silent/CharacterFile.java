@@ -115,7 +115,7 @@ public class CharacterFile extends CustomPlayer {
 
     @Override
     public int getAscensionMaxHPLoss() {
-        return 8;
+        return 7;
     }
 
     @Override
@@ -181,6 +181,17 @@ public class CharacterFile extends CustomPlayer {
     public String getVampireText() {
         return TEXT[2];
     }
+
+    /*
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList<>();
+        moon_fade = false;
+        panels.add(new CutscenePanel(HermitMod.getModID() + "Resources/images/ending/ending_1.png", HermitMod.makeID("GUN1")));
+        panels.add(new CutscenePanel(HermitMod.getModID() + "Resources/images/ending/ending_2.png"));
+        panels.add(new CutscenePanel(HermitMod.getModID() + "Resources/images/ending/ending_3.png"));
+        return panels;
+    }*/
 
     public static class Enums {
         @SpireEnum
