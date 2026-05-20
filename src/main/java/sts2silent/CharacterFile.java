@@ -3,7 +3,6 @@ package sts2silent;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -40,25 +39,9 @@ public class CharacterFile extends CustomPlayer {
 
 
     public CharacterFile(String name, PlayerClass setClass) {
-
-        //super(name, setClass);
-
-        /*super(name, setClass,
-                new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null),
-                new SpriterAnimation(makeCharacterPath("mainChar/static.scml")));*/
         super(name, setClass,
                 new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null),
                 new SpineAnimation(SKELETON_ATLAS, SKELETON_JSON, 1.0f));
-        /*super(name, setClass,
-                new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null),
-                "",
-        "");*/
-
-        /*super(name,
-                setClass,
-
-                new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null),
-                null);*/
         initializeClass(null,
                 SHOULDER1,
                 SHOULDER2,
