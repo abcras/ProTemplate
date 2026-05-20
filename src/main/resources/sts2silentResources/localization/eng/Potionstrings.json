@@ -5,5 +5,26 @@
             "Gain #b",
             " #yStrength."
         ]
-    }
+    },
+  "${ModID}:PoisonPotion": {
+    "NAME": "Poison Potion",
+    "DESCRIPTIONS": [
+      "Apply #b",
+      " #yPoison."
+    ]
+  },
+  "${ModID}:CunningPotion": {
+    "NAME": "Cunning Potion",
+    "DESCRIPTIONS": [
+      "Add #b",
+      " #yUpgraded #yShivs to your #yHand."
+    ]
+  },
+  "${ModID}:GhostInAJar": {
+    "NAME": "Ghost in a Jar",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " #yIntangible."
+    ]
+  }
 }

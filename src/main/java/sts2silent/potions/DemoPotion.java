@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
+/*
 public class DemoPotion extends AbstractEasyPotion {
     public static String ID = makeID("DemoPotion");
 
@@ -33,4 +34,4 @@ public class DemoPotion extends AbstractEasyPotion {
     public void addAdditionalTips() {
         tips.add(new PowerTip(BaseMod.getKeywordTitle(makeID("todo")), BaseMod.getKeywordDescription(makeID("todo"))));
     }
-}
+}*/
