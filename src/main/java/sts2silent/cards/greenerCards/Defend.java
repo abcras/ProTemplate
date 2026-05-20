@@ -1,7 +1,8 @@
-package sts2silent.cards;
+package sts2silent.cards.greenerCards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import sts2silent.cards.AbstractEasyCard;
 
 import static sts2silent.ModFile.makeID;
 

@@ -18,10 +18,10 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import sts2silent.cards.Defend;
-import sts2silent.cards.Neutralize;
-import sts2silent.cards.Strike;
-import sts2silent.cards.Survivor;
+import sts2silent.cards.greenerCards.Defend;
+import sts2silent.cards.greenerCards.Neutralize;
+import sts2silent.cards.greenerCards.Strike;
+import sts2silent.cards.greenerCards.Survivor;
 import sts2silent.relics.TodoItem;
 
 import java.util.ArrayList;
