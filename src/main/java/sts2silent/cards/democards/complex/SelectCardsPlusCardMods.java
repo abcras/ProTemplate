@@ -16,6 +16,7 @@ import java.util.Collections;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
+/*
 public class SelectCardsPlusCardMods extends AbstractEasyCard {
 
     public final static String ID = makeID(SelectCardsPlusCardMods.class.getSimpleName());
@@ -43,4 +44,4 @@ public class SelectCardsPlusCardMods extends AbstractEasyCard {
     public void upp() {
         upgradeBaseCost(0);
     }
-}
+}*/

@@ -6,18 +6,21 @@ import sts2silent.cards.AbstractEasyCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import sts2silent.cards.AbstractEasyCard;
 
+import static sts2silent.CharacterFile.Enums.Greener;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
-public class Neutralize extends AbstractEasyCard {
-    public final static String ID = makeID("Neutralize");
-    // intellij stuff ATTACK, ENEMY, Common, 3, 1, , , , 
+public class Suppress extends AbstractEasyCard {
+    public final static String ID = makeID("Suppress");
+    // intellij stuff attack, enemy, boss, 11, 6, , , 3, 2
 
-    public Neutralize() {
-        super(ID, 0, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
-        baseDamage = 3;
-        baseMagicNumber = magicNumber = 1;
+    public Suppress() {
+        super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY);
+        baseDamage = 11;
+        baseMagicNumber = magicNumber = 3;
+        isInnate = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -26,7 +29,8 @@ public class Neutralize extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeDamage(1);
-        upgradeMagicNumber(1);
+        upgradeDamage(6);
+        upgradeMagicNumber(2);
+
     }
 }

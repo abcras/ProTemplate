@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.atb;
 
+/*
 public class StartupBlockCard extends AbstractEasyCard implements StartupCard { // This card implements StartupCard, an extra 'type' of card that adds the ability to trigger at the start of combat.
     public final static String ID = makeID(StartupBlockCard.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , ,
@@ -37,4 +38,4 @@ public class StartupBlockCard extends AbstractEasyCard implements StartupCard { 
         upgradeDamage(2);
         upgradeMagicNumber(1);
     }
-}
+}*/

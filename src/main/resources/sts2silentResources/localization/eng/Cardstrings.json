@@ -7,6 +7,11 @@
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
+  "${ModID}:Survivor": {
+    "NAME": "Survivor",
+    "DESCRIPTION": "Gain !B! Block. Discard a card."
+  },
+
   "${ModID}:ExampleTwoAmountPowerCard": {
     "NAME": "Two Amount Power",
     "DESCRIPTION": "At the start of your turn, gain !M! Strength and !${ModID}:m2! Dexterity."
@@ -67,7 +72,7 @@
   },
 
   "${ModID}:DaggerSpray": {
-    "NAME": "DaggerSpray",
+    "NAME": "Dagger Spray",
     "DESCRIPTION": "Deal !D! damage to ALL enemies twice."
   },
 
@@ -78,6 +83,51 @@
 
   "${ModID}:Neutralize": {
     "NAME": "Neutralize",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! *Weak"
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! *Weak."
+  },
+  "${ModID}:EchoingSlash": {
+  "NAME": "Echoing Slash",
+  "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Repeat this effect for each enemy killed."
+  },
+  "${ModID}:Acrobatics": {
+    "NAME": "Acrobatics",
+    "DESCRIPTION": "*Draw !M! cards. NL *Discard 1 card."
+  },
+  "${ModID}:BubbleBubble": {
+    "NAME": "Bubble Bubble",
+    "DESCRIPTION": "If the enemy has *Poison, apply !M! *Poison."
+  },
+  "${ModID}:Predator": {
+    "NAME": "Predator",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, draw 2 cards."
+  },
+  "${ModID}:Deflect": {
+    "NAME": "Deflect",
+    "DESCRIPTION": "Gain !B! *Block."
+  },
+  "${ModID}:Footwork": {
+    "NAME": "Footwork",
+    "DESCRIPTION": "Gain !M! *Dexterity."
+  },
+  "${ModID}:Malaise": {
+    "NAME": "Malaise",
+    "DESCRIPTION": "Enemy loses X *Strength. NL Apply X *Weak. NL *Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enemy loses X+1 *Strength. NL Apply X+1 *Weak. NL *Exhaust."
+  },
+  "${ModID}:Envenom": {
+    "NAME": "Envenom",
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! *Poison."
+  },
+  "${ModID}:DeadlyPoison": {
+    "NAME": "Deadly Poison",
+    "DESCRIPTION": "Apply !M! *Poison."
+  },
+  "${ModID}:Suppress": {
+    "NAME": "Suppress",
+    "DESCRIPTION": "*Innate. NL Deal !D! damage. NL Apply !M! *Weak."
+  },
+  "${ModID}:WraithForm": {
+  "NAME": "Wraith Form",
+  "DESCRIPTION": "Gain !M! *Intangible. NL At the start of your turn lose 1 *Dexterity"
   }
 }

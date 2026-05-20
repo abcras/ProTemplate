@@ -5,5 +5,37 @@
     "DESCRIPTIONS": [
       "Has no effect."
     ]
+  },
+  "${ModID}:RingOfTheSnake2": {
+    "NAME": "Ring of the Snake",
+    "FLAVOR": "Made from a fossilized snake. Represents great skill as a huntress.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, draw #b",
+      " additional cards."
+    ]
+  },
+  "${ModID}:RingOfTheDrake": {
+    "NAME": "Ring of the Drake",
+    "FLAVOR": "Made from a fossilized drake. Represents the greatest skill achievable as a huntress.",
+    "DESCRIPTIONS": [
+      "At the start of the first 3 turns, draw #b",
+      " additional cards."
+    ]
+  },
+  "${ModID}:ArchaicTooth": {
+    "NAME": "Archaic tooth",
+    "FLAVOR": "A tooth given to you from the Ancient Orobas in another life.",
+    "DESCRIPTIONS": [
+      "Upon pickup, transform a Neutralize into an ancient version.",
+      "Reward."
+    ]
+  },
+  "${ModID}:DustyTome": {
+    "NAME": "Dusty Tome",
+    "FLAVOR": "A dusty old book from ages past or now?. Given to you by the ancient Darv in another life.",
+    "DESCRIPTIONS": [
+      "Upon pickup, obtain a copy of Wraith Form.",
+      "Reward."
+    ]
   }
 }

@@ -11,6 +11,7 @@ import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.applyToSelfTop;
 import static sts2silent.util.Wiz.atb;
 
+/*
 public class EasyXCostDemo extends AbstractEasyCard {
     public final static String ID = makeID(EasyXCostDemo.class.getSimpleName());
     // intellij stuff attack, enemy, rare, , , , , 0, 1
@@ -35,4 +36,4 @@ public class EasyXCostDemo extends AbstractEasyCard {
     public void upp() {
         upgradeMagicNumber(1);
     }
-}
+}*/

@@ -13,6 +13,7 @@ import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.applyToSelf;
 import static sts2silent.util.Wiz.atb;
 
+/*
 public class InlinePowerDemo extends AbstractEasyCard {
     public final static String ID = makeID(InlinePowerDemo.class.getSimpleName());
     // intellij stuff power, self, uncommon
@@ -49,4 +50,4 @@ public class InlinePowerDemo extends AbstractEasyCard {
     public void upp() {
         upgradeMagicNumber(2);
     }
-}
+}*/

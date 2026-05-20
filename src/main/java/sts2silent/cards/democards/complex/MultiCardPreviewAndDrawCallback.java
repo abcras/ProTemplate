@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
+/*
 public class MultiCardPreviewAndDrawCallback extends AbstractEasyCard {
     public final static String ID = makeID(MultiCardPreviewAndDrawCallback.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , ,
@@ -42,4 +43,4 @@ public class MultiCardPreviewAndDrawCallback extends AbstractEasyCard {
         upgradeDamage(1);
         MultiCardPreview.multiCardPreview.get(this).forEach(c -> c.upgrade()); // here, we show upgraded smite and safeties.
     }
-}
+}*/

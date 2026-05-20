@@ -8,6 +8,7 @@ import sts2silent.cards.AbstractEasyCard;
 
 import static sts2silent.ModFile.makeID;
 
+/*
 public class TwoTypesOfDamage extends AbstractEasyCard {
     public final static String ID = makeID(TwoTypesOfDamage.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , ,
@@ -30,4 +31,4 @@ public class TwoTypesOfDamage extends AbstractEasyCard {
         upgradeDamage(2);
         upgradeSecondDamage(5);
     }
-}
+}*/

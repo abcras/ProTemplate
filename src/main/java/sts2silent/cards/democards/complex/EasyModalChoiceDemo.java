@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
+/*
 public class EasyModalChoiceDemo extends AbstractEasyCard {
     public final static String ID = makeID(EasyModalChoiceDemo.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , , 
@@ -36,4 +37,4 @@ public class EasyModalChoiceDemo extends AbstractEasyCard {
         upgradeMagicNumber(1);
         upgradeSecondMagic(1);
     }
-}
+}*/

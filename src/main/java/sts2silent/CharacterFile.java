@@ -2,10 +2,12 @@ package sts2silent;
 
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +24,7 @@ import sts2silent.cards.greenerCards.Defend;
 import sts2silent.cards.greenerCards.Neutralize;
 import sts2silent.cards.greenerCards.Strike;
 import sts2silent.cards.greenerCards.Survivor;
-import sts2silent.relics.TodoItem;
+import sts2silent.relics.RingOfTheSnake2;
 
 import java.util.ArrayList;
 
@@ -38,8 +40,25 @@ public class CharacterFile extends CustomPlayer {
 
 
     public CharacterFile(String name, PlayerClass setClass) {
-        super(name, setClass, new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null), new SpriterAnimation(
-                makeCharacterPath("mainChar/static.scml")));
+
+        //super(name, setClass);
+
+        /*super(name, setClass,
+                new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null),
+                new SpriterAnimation(makeCharacterPath("mainChar/static.scml")));*/
+        super(name, setClass,
+                new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null),
+                new SpineAnimation(SKELETON_ATLAS, SKELETON_JSON, 1.0f));
+        /*super(name, setClass,
+                new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null),
+                "",
+        "");*/
+
+        /*super(name,
+                setClass,
+
+                new CustomEnergyOrb(orbTextures, makeCharacterPath("mainChar/orb/vfx.png"), null),
+                null);*/
         initializeClass(null,
                 SHOULDER1,
                 SHOULDER2,
@@ -49,22 +68,28 @@ public class CharacterFile extends CustomPlayer {
 
         dialogX = (drawX + 0.0F * Settings.scale);
         dialogY = (drawY + 240.0F * Settings.scale);
+
+        loadAnimation(SKELETON_ATLAS, SKELETON_JSON, 1.0f);
+
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        this.stateData.setMix("Hit", "Idle", 0.1F);
+        e.setTimeScale(0.9F);
     }
 
     @Override
     public CharSelectInfo getLoadout() {
         return new CharSelectInfo(NAMES[0], TEXT[0],
-                80, 80, 0, 99, 5, this, getStartingRelics(),
+                70, 70, 0, 99, 5, this, getStartingRelics(),
                 getStartingDeck(), false);
     }
 
     @Override
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 5; i++) {
             retVal.add(Strike.ID);
         }
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 5; i++) {
             retVal.add(Defend.ID);
         }
         retVal.add(Neutralize.ID);
@@ -75,7 +100,7 @@ public class CharacterFile extends CustomPlayer {
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(TodoItem.ID);
+        retVal.add(RingOfTheSnake2.ID);
         return retVal;
     }
 
@@ -175,7 +200,6 @@ public class CharacterFile extends CustomPlayer {
     }
 
     public static class Enums {
-        //TODO: Change these.
         @SpireEnum
         public static AbstractPlayer.PlayerClass STS2Silent;
         @SpireEnum(name = "Greener")

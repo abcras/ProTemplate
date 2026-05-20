@@ -12,7 +12,7 @@ public class Survivor extends AbstractEasyCard {
     // intellij stuff ATTACK, ENEMY, Common, 3, 1, , , ,
 
     public Survivor() {
-        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.SELF);
         baseBlock = 8;
         //magicNumber = 1;
     }

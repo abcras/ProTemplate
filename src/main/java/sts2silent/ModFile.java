@@ -38,17 +38,16 @@ public class ModFile implements
         EditCharactersSubscriber,
         AddAudioSubscriber {
 
-    public static final String modID = "sts2silent"; //TODO: Change this.
+    public static final String modID = "sts2silent";
 
     public static String makeID(String idText) {
         return modID + ":" + idText;
     }
 
-    public static Color characterColor = new Color(MathUtils.random(), MathUtils.random(), MathUtils.random(), 1); // This should be changed eventually
-
-    public static final String SHOULDER1 = makeCharacterPath("mainChar/shoulder.png");
-    public static final String SHOULDER2 = makeCharacterPath("mainChar/shoulder2.png");
-    public static final String CORPSE = makeCharacterPath("mainChar/corpse.png");
+    public static Color characterColor = new Color(0.25F, 0.55F, 0.0F, 1.0F);
+    public static final String SHOULDER1 = makeCharacterPath("mainChar/silent_oversholder_light.png");
+    public static final String SHOULDER2 = makeCharacterPath("mainChar/silent_oversholder.png");
+    public static final String CORPSE = makeCharacterPath("mainChar/silent_corpse.png");
     private static final String ATTACK_S_ART = makeImagePath("512/attack.png");
     private static final String SKILL_S_ART = makeImagePath("512/skill.png");
     private static final String POWER_S_ART = makeImagePath("512/power.png");
@@ -58,8 +57,13 @@ public class ModFile implements
     private static final String SKILL_L_ART = makeImagePath("1024/skill.png");
     private static final String POWER_L_ART = makeImagePath("1024/power.png");
     private static final String CARD_ENERGY_L = makeImagePath("1024/energy.png");
-    private static final String CHARSELECT_BUTTON = makeImagePath("charSelect/charButton.png");
-    private static final String CHARSELECT_PORTRAIT = makeImagePath("charSelect/charBG.png");
+    private static final String CHARSELECT_BUTTON = makeImagePath("charSelect/silent_char_btn.png");
+    private static final String CHARSELECT_PORTRAIT = makeImagePath("charSelect/silent_background.png");
+
+    public static final String SKELETON_ATLAS  = makeCharacterPath("mainChar/idle/skeleton.atlas");
+
+    public static final String SKELETON_JSON  = makeCharacterPath("mainChar/idle/skeleton.json");
+
 
     public static Settings.GameLanguage[] SupportedLanguages = {
             Settings.GameLanguage.ENG,

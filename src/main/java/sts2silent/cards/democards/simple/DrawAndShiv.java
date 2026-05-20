@@ -6,9 +6,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import sts2silent.cards.AbstractEasyCard;
 
+import static sts2silent.ModFile.characterColor;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
+/*
 public class DrawAndShiv extends AbstractEasyCard {
     public final static String ID = makeID(DrawAndShiv.class.getSimpleName());
     // intellij stuff skill, self, uncommon, , , , , , 
@@ -27,4 +29,4 @@ public class DrawAndShiv extends AbstractEasyCard {
     public void upp() {
         upgradeBaseCost(0);
     }
-}
+}*/
