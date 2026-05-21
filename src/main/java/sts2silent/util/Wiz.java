@@ -187,6 +187,10 @@ public class Wiz {
         discard(amount, false);
     }
 
+    public static void draw(int amount) {
+        atb(new DrawCardAction(amount));
+    }
+
     public static int pwrAmt(AbstractCreature check, String ID) {
         AbstractPower found = check.getPower(ID);
         if (found != null)

@@ -1,10 +1,10 @@
 [
   {
-    "PROPER_NAME": "TODO",
+    "PROPER_NAME": "Sly",
     "NAMES": [
-      "todo",
-      "todos"
+      "Sly",
+      "sly"
     ],
-    "DESCRIPTION": "TODO: Make your own epic keywords"
+    "DESCRIPTION": "If this card is discarded from your hand during your turn, play it for free."
   }
 ]

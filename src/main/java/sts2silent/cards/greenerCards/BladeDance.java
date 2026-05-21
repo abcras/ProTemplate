@@ -11,18 +11,19 @@ import static sts2silent.CharacterFile.Enums.Greener;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
-public class BladeOfInk extends AbstractEasyCard {
-    public final static String ID = makeID("BladeOfInk");
-    // intellij stuff skill, self, rare, , , , , 2, 1
+public class BladeDance extends AbstractEasyCard {
+    public final static String ID = makeID("BladeDance");
+    // intellij stuff skill, self, common, , , , , 3, 1
 
-    public BladeOfInk() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseMagicNumber = magicNumber = 2;
-        cardsToPreview = new Shiv2(true);
+    public BladeDance() {
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseMagicNumber = magicNumber = 3;
+        exhaust = true;
+        cardsToPreview = new Shiv2();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        makeInHand(new Shiv2(true), magicNumber);
+        makeInHand(new Shiv2(), magicNumber);
     }
 
     public void upp() {

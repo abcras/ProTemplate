@@ -157,5 +157,66 @@
   "${ModID}:BladeOfInk": {
     "NAME": "Blade of Ink",
     "DESCRIPTION": "Add !M! Inky *Shivs into your *Hand."
+  },
+  "${ModID}:BladeDance": {
+    "NAME": "Blade Dance",
+    "DESCRIPTION": "Add !M! *Shivs into your *Hand. NL *Exhaust."
+  },
+  "${ModID}:PoisonedStab": {
+    "NAME": "Poisoned Stab",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! *Poison."
+  },
+  "${ModID}:CloakAndDagger": {
+    "NAME": "Cloak and Dagger",
+    "DESCRIPTION": "Gain !B! *Block. NL Add !M! *Shiv int your *Hand."
+  },
+  "${ModID}:Anticipate": {
+    "NAME": "Anticipate",
+    "DESCRIPTION": "Gain !M! *Dexterity this turn."
+  },
+  "${ModID}:Backflip": {
+    "NAME": "Backflip",
+    "DESCRIPTION": "Gain !B! *Block. NL Draw !M! cards."
+  },
+  "${ModID}:DaggerThrow": {
+    "NAME": "Dagger Throw",
+    "DESCRIPTION": "Deal !D! damage. NL Draw !M! card. NL Discard !M! card."
+  },
+  "${ModID}:DodgeAndRoll": {
+    "NAME": "Dodge and Roll",
+    "DESCRIPTION": "Gain !B! *Block. NL Next turn, gain !B! *Block."
+  },
+  "${ModID}:PiercingWail": {
+    "NAME": "Piercing Wail",
+    "DESCRIPTION": "All enemies lose !M! *Strength this turn. NL *Exhaust."
+  },
+  "${ModID}:Prepared": {
+    "NAME": "Prepared",
+    "DESCRIPTION": "Draw !M! card. NL Discard !M! card.",
+    "UPGRADE_DESCRIPTION": "Draw !M! cards. NL Discard !M! cards."
+  },
+  "${ModID}:FollowThrough": {
+    "NAME": "Follow Through",
+    "DESCRIPTION": "Deal !D! damage. NL If you have 5 or more other cards in your *Hand, hits an additional time."
+  },
+  "${ModID}:Untouchable": {
+    "NAME": "Untouchable",
+    "DESCRIPTION": "*Sly. NL Gain !B! *Block."
+  },
+  "${ModID}:Flick-Flack": {
+    "NAME": "Flick-Flack",
+    "DESCRIPTION": "*Sly. NL Deal !D! damage to ALL enemies."
+  },
+  "${ModID}:SuckerPunch": {
+    "NAME": "Sucker Punch",
+    "DESCRIPTION": "Deal !D! damage. Apply !M! *Weak."
+  },
+  "${ModID}:Ricochet": {
+    "NAME": "Ricochet",
+    "DESCRIPTION": "*Sly. NL Deal !D! damage to a random enemy !M! times."
+  },
+  "${ModID}:Snakebite": {
+    "NAME": "Snakebite",
+    "DESCRIPTION": "*Retain. NL Apply !M! *Poison."
   }
 }

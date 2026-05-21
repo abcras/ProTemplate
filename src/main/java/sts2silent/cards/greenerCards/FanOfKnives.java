@@ -23,6 +23,7 @@ public class FanOfKnives extends AbstractEasyCard {
     public FanOfKnives() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = 4;
+        cardsToPreview = new Shiv2();
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

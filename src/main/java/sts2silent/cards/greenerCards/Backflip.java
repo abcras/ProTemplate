@@ -1,5 +1,6 @@
 package sts2silent.cards.greenerCards;
 
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import sts2silent.cards.AbstractEasyCard;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -11,22 +12,24 @@ import static sts2silent.CharacterFile.Enums.Greener;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
-public class BladeOfInk extends AbstractEasyCard {
-    public final static String ID = makeID("BladeOfInk");
-    // intellij stuff skill, self, rare, , , , , 2, 1
+public class Backflip extends AbstractEasyCard {
+    public final static String ID = makeID("Backflip");
+    // intellij stuff skill, self, common, , , 5, 3, 2, 
 
-    public BladeOfInk() {
-        super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
+    public Backflip() {
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
+        baseBlock = 5;
         baseMagicNumber = magicNumber = 2;
-        cardsToPreview = new Shiv2(true);
+
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        makeInHand(new Shiv2(true), magicNumber);
+        blck();
+        addToBot(new DrawCardAction(p, magicNumber));
     }
 
     public void upp() {
-        upgradeMagicNumber(1);
+        upgradeBlock(3);
 
     }
 }
