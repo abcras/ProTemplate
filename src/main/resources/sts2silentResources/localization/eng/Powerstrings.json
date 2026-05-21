@@ -6,5 +6,19 @@
       " #yStrength and #b",
       " #yDexterity."
     ]
+  },
+  "${ModID}:PhantomBladesPower": {
+    "NAME": "Phantom Blades",
+    "DESCRIPTIONS": [
+      "#yShivs gain #yRetain. NL ",
+      "The first shiv you play each turn deals ",
+      " additional damage."
+    ]
+  },
+  "${ModID}:FanOfKnivesPower": {
+    "NAME": "Fan of Knives",
+    "DESCRIPTIONS": [
+      "#yShivs now hit ALL enemies."
+    ]
   }
 }

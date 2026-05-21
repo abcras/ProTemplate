@@ -5,8 +5,10 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import sts2silent.ModFile;
 import sts2silent.util.TexLoader;
@@ -18,6 +20,9 @@ public abstract class AbstractEasyPower extends AbstractPower {
     public static Color greenColor2 = Color.GREEN.cpy();
     public boolean canGoNegative2 = false;
 
+    private PowerStrings powerStrings = null;
+
+
     public AbstractEasyPower(String ID, String NAME, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount) {
         this.ID = ID;
         this.isTurnBased = isTurnBased;
@@ -28,6 +33,8 @@ public abstract class AbstractEasyPower extends AbstractPower {
         this.amount = amount;
         this.type = powerType;
 
+        powerStrings = CardCrawlGame.languagePack.getPowerStrings(NAME);
+        DESCRIPTIONS = powerStrings.DESCRIPTIONS;
         Texture normalTexture = TexLoader.getTexture(ModFile.modID + "Resources/images/powers/" + ID.replaceAll(ModFile.modID + ":", "") + "32.png");
         Texture hiDefImage = TexLoader.getTexture(ModFile.modID + "Resources/images/powers/" + ID.replaceAll(ModFile.modID + ":", "") + "84.png");
         if (hiDefImage != null) {

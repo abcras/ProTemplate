@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import sts2silent.cards.AbstractEasyCard;
@@ -22,7 +21,7 @@ public class LeadingStrike extends AbstractEasyCard {
 
     public LeadingStrike() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY); // This card is a 1 cost Uncommon Skill that targets the Self.
-        cardsToPreview = new Shiv(); // Preview a Shiv when hovering over this card.
+        cardsToPreview = new Shiv2(); // Preview a Shiv when hovering over this card.
         //Unnecessary
         color = Greener;
         this.baseDamage = 3;
@@ -31,8 +30,8 @@ public class LeadingStrike extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         dmg(m, AbstractGameAction.AttackEffect.NONE);
-        makeInHand(new Shiv());
-        makeInHand(new Shiv());
+        makeInHand(new Shiv2());
+        makeInHand(new Shiv2());
     }
 
     @Override

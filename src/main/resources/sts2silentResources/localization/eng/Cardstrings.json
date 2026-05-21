@@ -129,5 +129,33 @@
   "${ModID}:WraithForm": {
   "NAME": "Wraith Form",
   "DESCRIPTION": "Gain !M! *Intangible. NL At the start of your turn lose 1 *Dexterity"
+  },
+  "${ModID}:Shiv": {
+    "NAME": "Shiv",
+    "DESCRIPTION": "Deal !D! damage. NL *Exhaust",
+    "EXTENDED_DESCRIPTION": [
+      "*Retain. NL ",
+      " Deal !D!",
+      " damage.",
+      " damage to *All. ",
+      " NL Apply 1 *Weak ",
+      " NL *Exhaust."
+    ]
+  },
+  "${ModID}:PhantomBlades": {
+    "NAME": "Phantom Blades",
+    "DESCRIPTION": "*Shivs gain *Retain. NL The first shiv you play each turn deals !M! additional damage."
+  },
+  "${ModID}:FanOfKnives": {
+    "NAME": "Fan of Knives",
+    "DESCRIPTION": "*Shivs now hit ALL enemies. NL Add !M! *Shivs into your *Hand."
+  },
+  "${ModID}:Accuracy": {
+    "NAME": "Accuracy",
+    "DESCRIPTION": "*Shivs deal !M! additional damage."
+  },
+  "${ModID}:BladeOfInk": {
+    "NAME": "Blade of Ink",
+    "DESCRIPTION": "Add !M! Inky *Shivs into your *Hand."
   }
 }
