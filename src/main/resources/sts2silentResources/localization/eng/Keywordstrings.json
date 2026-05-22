@@ -3,7 +3,9 @@
     "PROPER_NAME": "Sly",
     "NAMES": [
       "Sly",
-      "sly"
+      "sly",
+      "Sly.",
+      "sly."
     ],
     "DESCRIPTION": "If this card is discarded from your hand during your turn, play it for free."
   }

@@ -41,6 +41,12 @@ public class EasyXCostAction extends AbstractGameAction {
                 effect += 2;
                 AbstractDungeon.player.getRelic(ChemicalX.ID).flash();
             }
+            if(effect == 0)
+            {
+                isDone = true;
+                firstUpdate = false;
+                return;
+            }
 
             isDone = xActionUpdate.apply(effect, params) || duration < 0.0f;
             firstUpdate = false;
@@ -49,6 +55,12 @@ public class EasyXCostAction extends AbstractGameAction {
                 AbstractDungeon.player.energy.use(EnergyPanel.totalCount);
             }
         } else {
+            if(effect == 0)
+            {
+                isDone = true;
+                //firstUpdate = false;
+                return;
+            }
             isDone = xActionUpdate.apply(effect, params) || duration < 0.0f;
         }
     }

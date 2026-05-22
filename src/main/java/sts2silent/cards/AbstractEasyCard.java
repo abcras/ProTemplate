@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import java.util.function.Consumer;
 import sts2silent.CharacterFile;
 import sts2silent.util.CardArtRoller;
@@ -24,6 +25,7 @@ import static sts2silent.ModFile.modID;
 import static sts2silent.util.Wiz.*;
 
 public abstract class AbstractEasyCard extends CustomCard {
+    //public static List<AvailableInPatch> PatchBlockList = Arrays.asList();
 
     protected final CardStrings cardStrings;
 
@@ -46,6 +48,7 @@ public abstract class AbstractEasyCard extends CustomCard {
     public AbstractEasyCard(final String cardID, final int cost, final CardType type, final CardRarity rarity, final CardTarget target, final CardColor color) {
         super(cardID, "", getCardTextureString(cardID.replace(modID + ":", ""), type),
                 cost, "", type, color, rarity, target);
+
         cardStrings = CardCrawlGame.languagePack.getCardStrings(this.cardID);
         rawDescription = cardStrings.DESCRIPTION;
         name = originalName = cardStrings.NAME;
@@ -60,6 +63,17 @@ public abstract class AbstractEasyCard extends CustomCard {
         }
     }
 
+    /*public boolean CheckPatchAvailability(AvailableInPatch patchNumber){
+        //is card from a newer patch:
+        boolean lessThan = patchNumber.compareTo(CardInNewestPatch) < 0;
+
+        return !lessThan;
+    }
+
+    public void SetCardsLatestPatch(AvailableInPatch patchNumber){
+        CardInNewestPatch = patchNumber;
+    }
+*/
     @Override
     protected Texture getPortraitImage() {
         if (textureImg.contains("ui/missing.png")) {
@@ -69,7 +83,7 @@ public abstract class AbstractEasyCard extends CustomCard {
         }
     }
 
-    public static String getCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
+    public static String getCardTextureString(final String cardName, final CardType cardType) {
         String textureString;
 
         switch (cardType) {

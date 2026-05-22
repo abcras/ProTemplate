@@ -7,7 +7,6 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
@@ -43,6 +42,12 @@ public class ModFile implements
     public static String makeID(String idText) {
         return modID + ":" + idText;
     }
+
+    /*public static enum AvailableInPatch {
+        v01051,
+        v01060
+    };*/
+    //public static AvailableInPatch currentPatch = AvailableInPatch.v01060;
 
     public static Color characterColor = new Color(0.25F, 0.55F, 0.0F, 1.0F);
     public static final String SHOULDER1 = makeCharacterPath("mainChar/silent_oversholder_light.png");

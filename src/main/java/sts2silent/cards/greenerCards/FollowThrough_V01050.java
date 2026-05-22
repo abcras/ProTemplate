@@ -1,23 +1,22 @@
+/*
 package sts2silent.cards.greenerCards;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import sts2silent.ModFile;
 import sts2silent.cards.AbstractEasyCard;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import sts2silent.cards.AbstractEasyCard;
 
-import static sts2silent.CharacterFile.Enums.Greener;
 import static sts2silent.ModFile.makeID;
-import static sts2silent.util.Wiz.*;
 
-public class FollowThrough extends AbstractEasyCard {
+public class FollowThrough_V01050 extends AbstractEasyCard {
     public final static String ID = makeID("FollowThrough");
     // intellij stuff attack, enemy, common, 7, 2, , , , 
 
-    public FollowThrough() {
+    public FollowThrough_V01050() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         baseDamage = 7;
     }
@@ -44,4 +43,4 @@ public class FollowThrough extends AbstractEasyCard {
         upgradeDamage(2);
 
     }
-}
+}*/

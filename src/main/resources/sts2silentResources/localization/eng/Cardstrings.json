@@ -218,5 +218,10 @@
   "${ModID}:Snakebite": {
     "NAME": "Snakebite",
     "DESCRIPTION": "*Retain. NL Apply !M! *Poison."
+  },
+  "${ModID}:Scare": {
+    "NAME": "Scare",
+    "DESCRIPTION": "Apply !M! *Weak. NL *Exhaust",
+    "UPGRADE_DESCRIPTION": "Apply !M! *Weak."
   }
 }
