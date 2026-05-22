@@ -117,6 +117,12 @@ public class Shiv2 extends AbstractEasyCard {
         return new Shiv2(this.inky);
     }
 
+    @Override
+    protected void upgradeDamage(int amount) {
+        super.upgradeDamage(amount);
+        newBaseDamage += amount;
+    }
+
     public void upp() {
         upgradeDamage(2);
 

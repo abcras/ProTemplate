@@ -8,8 +8,10 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
@@ -37,6 +39,11 @@ public class ModFile implements
         EditCharactersSubscriber,
         AddAudioSubscriber {
 
+
+    public static class Enums {
+        @SpireEnum
+        public static AbstractCard.CardTags SLY;
+    }
     public static final String modID = "sts2silent";
 
     public static String makeID(String idText) {
@@ -195,4 +202,6 @@ public class ModFile implements
             }
         }
     }
+
+
 }

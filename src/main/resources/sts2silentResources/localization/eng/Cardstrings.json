@@ -51,7 +51,7 @@
   },
   "${ModID}:DrawAndShiv": {
     "NAME": "Draw and Shiv",
-    "DESCRIPTION": "Draw 1 card. NL Add 1 *Shiv into your hand."
+    "DESCRIPTION": "Draw 1 card. NL Add 1 Shiv into your hand."
   },
   "${ModID}:TwoTypesOfDamage": {
     "NAME": "Two Damage Values",
@@ -68,7 +68,7 @@
 
   "${ModID}:LeadingStrike": {
     "NAME": "Leading Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Add 2 *Shivs into your *Hand."
+    "DESCRIPTION": "Deal !D! damage. NL Add 2 Shivs into your *Hand."
   },
 
   "${ModID}:DaggerSpray": {
@@ -83,7 +83,7 @@
 
   "${ModID}:Neutralize": {
     "NAME": "Neutralize",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! *Weak."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak."
   },
   "${ModID}:EchoingSlash": {
   "NAME": "Echoing Slash",
@@ -91,11 +91,11 @@
   },
   "${ModID}:Acrobatics": {
     "NAME": "Acrobatics",
-    "DESCRIPTION": "*Draw !M! cards. NL *Discard 1 card."
+    "DESCRIPTION": "Draw !M! cards. NL Discard 1 card."
   },
   "${ModID}:BubbleBubble": {
     "NAME": "Bubble Bubble",
-    "DESCRIPTION": "If the enemy has *Poison, apply !M! *Poison."
+    "DESCRIPTION": "If the enemy has Poison, apply !M! Poison."
   },
   "${ModID}:Predator": {
     "NAME": "Predator",
@@ -103,80 +103,80 @@
   },
   "${ModID}:Deflect": {
     "NAME": "Deflect",
-    "DESCRIPTION": "Gain !B! *Block."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "${ModID}:Footwork": {
     "NAME": "Footwork",
-    "DESCRIPTION": "Gain !M! *Dexterity."
+    "DESCRIPTION": "Gain !M! Dexterity."
   },
   "${ModID}:Malaise": {
     "NAME": "Malaise",
-    "DESCRIPTION": "Enemy loses X *Strength. NL Apply X *Weak. NL *Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enemy loses X+1 *Strength. NL Apply X+1 *Weak. NL *Exhaust."
+    "DESCRIPTION": "Enemy loses X Strength. NL Apply X Weak. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enemy loses X+1 Strength. NL Apply X+1 Weak. NL Exhaust."
   },
   "${ModID}:Envenom": {
     "NAME": "Envenom",
-    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! *Poison."
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! Poison."
   },
   "${ModID}:DeadlyPoison": {
     "NAME": "Deadly Poison",
-    "DESCRIPTION": "Apply !M! *Poison."
+    "DESCRIPTION": "Apply !M! Poison."
   },
   "${ModID}:Suppress": {
     "NAME": "Suppress",
-    "DESCRIPTION": "*Innate. NL Deal !D! damage. NL Apply !M! *Weak."
+    "DESCRIPTION": "Innate. NL Deal !D! damage. NL Apply !M! Weak."
   },
   "${ModID}:WraithForm": {
   "NAME": "Wraith Form",
-  "DESCRIPTION": "Gain !M! *Intangible. NL At the start of your turn lose 1 *Dexterity"
+  "DESCRIPTION": "Gain !M! Intangible. NL At the start of your turn lose 1 Dexterity"
   },
   "${ModID}:Shiv": {
     "NAME": "Shiv",
-    "DESCRIPTION": "Deal !D! damage. NL *Exhaust",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "*Retain. NL ",
+      "Retain. NL ",
       " Deal !D!",
       " damage.",
       " damage to *All. ",
-      " NL Apply 1 *Weak ",
-      " NL *Exhaust."
+      " NL Apply 1 Weak ",
+      " NL Exhaust."
     ]
   },
   "${ModID}:PhantomBlades": {
     "NAME": "Phantom Blades",
-    "DESCRIPTION": "*Shivs gain *Retain. NL The first shiv you play each turn deals !M! additional damage."
+    "DESCRIPTION": "Shivs gain Retain. NL The first shiv you play each turn deals !M! additional damage."
   },
   "${ModID}:FanOfKnives": {
     "NAME": "Fan of Knives",
-    "DESCRIPTION": "*Shivs now hit ALL enemies. NL Add !M! *Shivs into your *Hand."
+    "DESCRIPTION": "Shivs now hit ALL enemies. NL Add !M! Shivs into your *Hand."
   },
   "${ModID}:Accuracy": {
     "NAME": "Accuracy",
-    "DESCRIPTION": "*Shivs deal !M! additional damage."
+    "DESCRIPTION": "Shivs deal !M! additional damage."
   },
   "${ModID}:BladeOfInk": {
     "NAME": "Blade of Ink",
-    "DESCRIPTION": "Add !M! Inky *Shivs into your *Hand."
+    "DESCRIPTION": "Add !M! Inky Shivs into your *Hand."
   },
   "${ModID}:BladeDance": {
     "NAME": "Blade Dance",
-    "DESCRIPTION": "Add !M! *Shivs into your *Hand. NL *Exhaust."
+    "DESCRIPTION": "Add !M! Shivs into your *Hand. NL Exhaust."
   },
   "${ModID}:PoisonedStab": {
     "NAME": "Poisoned Stab",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! *Poison."
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison."
   },
   "${ModID}:CloakAndDagger": {
     "NAME": "Cloak and Dagger",
-    "DESCRIPTION": "Gain !B! *Block. NL Add !M! *Shiv int your *Hand."
+    "DESCRIPTION": "Gain !B! Block. NL Add !M! Shiv int your *Hand."
   },
   "${ModID}:Anticipate": {
     "NAME": "Anticipate",
-    "DESCRIPTION": "Gain !M! *Dexterity this turn."
+    "DESCRIPTION": "Gain !M! Dexterity this turn."
   },
   "${ModID}:Backflip": {
     "NAME": "Backflip",
-    "DESCRIPTION": "Gain !B! *Block. NL Draw !M! cards."
+    "DESCRIPTION": "Gain !B! Block. NL Draw !M! cards."
   },
   "${ModID}:DaggerThrow": {
     "NAME": "Dagger Throw",
@@ -184,11 +184,11 @@
   },
   "${ModID}:DodgeAndRoll": {
     "NAME": "Dodge and Roll",
-    "DESCRIPTION": "Gain !B! *Block. NL Next turn, gain !B! *Block."
+    "DESCRIPTION": "Gain !B! Block. NL Next turn, gain !B! Block."
   },
   "${ModID}:PiercingWail": {
     "NAME": "Piercing Wail",
-    "DESCRIPTION": "All enemies lose !M! *Strength this turn. NL *Exhaust."
+    "DESCRIPTION": "All enemies lose !M! Strength this turn. NL Exhaust."
   },
   "${ModID}:Prepared": {
     "NAME": "Prepared",
@@ -201,27 +201,32 @@
   },
   "${ModID}:Untouchable": {
     "NAME": "Untouchable",
-    "DESCRIPTION": "*Sly. NL Gain !B! *Block."
+    "DESCRIPTION": "${ModID}:Sly. NL Gain !B! Block."
   },
   "${ModID}:Flick-Flack": {
     "NAME": "Flick-Flack",
-    "DESCRIPTION": "*Sly. NL Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "${ModID}:Sly. NL Deal !D! damage to ALL enemies."
   },
   "${ModID}:SuckerPunch": {
     "NAME": "Sucker Punch",
-    "DESCRIPTION": "Deal !D! damage. Apply !M! *Weak."
+    "DESCRIPTION": "Deal !D! damage. Apply !M! Weak."
   },
   "${ModID}:Ricochet": {
     "NAME": "Ricochet",
-    "DESCRIPTION": "*Sly. NL Deal !D! damage to a random enemy !M! times."
+    "DESCRIPTION": "${ModID}:Sly. NL Deal !D! damage to a random enemy !M! times."
   },
   "${ModID}:Snakebite": {
     "NAME": "Snakebite",
-    "DESCRIPTION": "*Retain. NL Apply !M! *Poison."
+    "DESCRIPTION": "Retain. NL Apply !M! Poison."
   },
   "${ModID}:Scare": {
     "NAME": "Scare",
-    "DESCRIPTION": "Apply !M! *Weak. NL *Exhaust",
-    "UPGRADE_DESCRIPTION": "Apply !M! *Weak."
+    "DESCRIPTION": "Apply !M! Weak. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply !M! Weak."
+  },
+  "${ModID}:HiddenDaggers": {
+    "NAME": "Hidden Daggers",
+    "DESCRIPTION": "Discard !M! cards. NL Add !M! Shivs into your *Hand.",
+    "UPGRADE_DESCRIPTION": "Discard !M! cards. NL Add !M! Shivs+ into your *Hand."
   }
 }
