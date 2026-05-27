@@ -5,11 +5,9 @@ import sts2silent.cards.AbstractEasyCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import sts2silent.cards.AbstractEasyCard;
+import sts2silent.patches.SlyPatch;
 
-import static sts2silent.CharacterFile.Enums.Greener;
 import static sts2silent.ModFile.makeID;
-import static sts2silent.util.Wiz.*;
 
 public class Ricochet extends AbstractEasyCard {
     public final static String ID = makeID("Ricochet");
@@ -19,6 +17,7 @@ public class Ricochet extends AbstractEasyCard {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         baseDamage = 3;
         baseMagicNumber = magicNumber = 4;
+        SlyPatch.SlyField.sly.set(this, true);
     }
 
     public void DoStuff(){
@@ -30,10 +29,10 @@ public class Ricochet extends AbstractEasyCard {
         DoStuff();
     }
 
-    @Override
+    /*@Override
     public void triggerOnManualDiscard() {
         DoStuff();
-    }
+    }*/
 
     public void upp() {
         upgradeMagicNumber(1);

@@ -20,5 +20,11 @@
     "DESCRIPTIONS": [
       "#yShivs now hit ALL enemies."
     ]
+  },
+  "${ModID}:MasterPlannerPower": {
+    "NAME": "Master Planner",
+    "DESCRIPTIONS": [
+      "When you play a Skill, it gains #ySly."
+    ]
   }
 }

@@ -277,4 +277,10 @@ public abstract class AbstractEasyCard extends CustomCard {
     public CardArtRoller.ReskinInfo reskinInfo(String ID) {
         return null;
     }
+
+    @Override
+    public void triggerOnManualDiscard() {
+        super.triggerOnManualDiscard();
+    }
+
 }

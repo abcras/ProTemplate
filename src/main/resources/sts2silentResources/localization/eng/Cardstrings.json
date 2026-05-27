@@ -168,7 +168,7 @@
   },
   "${ModID}:CloakAndDagger": {
     "NAME": "Cloak and Dagger",
-    "DESCRIPTION": "Gain !B! Block. NL Add !M! Shiv int your *Hand."
+    "DESCRIPTION": "Gain !B! Block. NL Add !M! Shiv into your *Hand."
   },
   "${ModID}:Anticipate": {
     "NAME": "Anticipate",
@@ -228,5 +228,13 @@
     "NAME": "Hidden Daggers",
     "DESCRIPTION": "Discard !M! cards. NL Add !M! Shivs into your *Hand.",
     "UPGRADE_DESCRIPTION": "Discard !M! cards. NL Add !M! Shivs+ into your *Hand."
+  },
+  "${ModID}:HandTrick": {
+    "NAME": "Hand Trick",
+    "DESCRIPTION": "Gain !B! Block. NL Add ${ModID}:Sly to a Skill in your Hand this turn."
+  },
+  "${ModID}:MasterPlanner": {
+    "NAME": "Master Planner",
+    "DESCRIPTION": "When you play a Skill, it gains ${ModID}:Sly."
   }
 }
