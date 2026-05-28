@@ -321,11 +321,11 @@
   },
   "${ModID}:Pinpoint": {
     "NAME": "Pinpoint",
-    "DESCRIPTION": "Deal !D! damage. NL Costs 1 less !E! for each Skill played this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Costs 1 less [E] for each Skill played this turn."
   },
   "${ModID}:Pounce": {
     "NAME": "Pounce",
-    "DESCRIPTION": "Deal !D! damage. NL The next Skill you play costs 0 !E!."
+    "DESCRIPTION": "Deal !D! damage. NL The next Skill you play costs 0 [G]."
   },
   "${ModID}:PreciseCut": {
     "NAME": "Precise Cut",
@@ -345,7 +345,8 @@
   },
   "${ModID}:Speedster": {
     "NAME": "Speedster",
-    "DESCRIPTION": "Whenever you draw a card during your turn, deal !M! damage to ALL enemies."
+    "DESCRIPTION": "Whenever you draw a card during your turn, deal !M! damage to ALL enemies.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you draw a card during your turn, deal !M! damage to ALL enemies."
   },
   "${ModID}:Strangle": {
     "NAME": "Strangle",
@@ -357,8 +358,8 @@
   },
   "${ModID}:Tactician": {
     "NAME": "Tactician",
-    "DESCRIPTION": "${ModID}:Sly. NL Gain !E!.",
-    "UPGRADE_DESCRIPTION": "${ModID}:Sly. NL Gain !E! !E!."
+    "DESCRIPTION": "${ModID}:Sly. NL Gain [E].",
+    "UPGRADE_DESCRIPTION": "${ModID}:Sly. NL Gain [E] [E]."
   },
   "${ModID}:WellLaidPlans": {
     "NAME": "Well-Laid Plans",

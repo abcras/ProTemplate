@@ -8,7 +8,7 @@ import sts2silent.cards.AbstractEasyCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import sts2silent.patches.SlyPatch;
+import sts2silent.patches.Patches;
 
 import static sts2silent.ModFile.makeID;
 
@@ -20,7 +20,7 @@ public class FlickFlack extends AbstractEasyCard {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         baseDamage = 6;
         isMultiDamage = true;
-        SlyPatch.SlyField.sly.set(this, true);
+        Patches.SlyField.sly.set(this, true);
     }
 
     public void DoStuff(AbstractPlayer p){

@@ -49,5 +49,13 @@
       " card.",
       " cards."
     ]
+  },
+  "${ModID}:FreeSkillPower": {
+    "NAME": "Free Skill",
+    "DESCRIPTIONS": [
+      "Ignore the energy cost of the next #ySkill you play.",
+      "Ignore the energy cost of the next ",
+      " #ySkills you play."
+    ]
   }
 }

@@ -8,13 +8,14 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
 import sts2silent.actions.UseCardActionFromDiscard;
 
-import static com.megacrit.cardcrawl.cards.AbstractCard.*;
+import static sts2silent.ModFile.makeID;
 import static sts2silent.ModFile.modID;
 
-public class SlyPatch {
+public class Patches {
 
     @SpirePatch(
             clz = AbstractCard.class,
@@ -33,6 +34,19 @@ public class SlyPatch {
                 __instance.initializeDescription();*/
                 __instance.glowColor = new Color(0.2F, 0.9F, 1.0F, 0.25F);
             }
+        }
+    }
+
+    @SpirePatch(clz = AbstractCard.class, method = "freeToPlay")
+    public static class extendFreeToPlayMethod{
+        public static boolean Postfix(boolean __result, AbstractCard __instance) {
+            boolean res = AbstractDungeon.player != null &&
+                    AbstractDungeon.currMapNode != null &&
+                    AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT &&
+                    AbstractDungeon.player.hasPower(makeID("FreeSkillPower"))
+                    && __instance.type == AbstractCard.CardType.SKILL;
+
+            return res || __result;
         }
     }
 

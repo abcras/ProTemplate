@@ -4,7 +4,7 @@ import sts2silent.cards.AbstractEasyCard;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import sts2silent.patches.SlyPatch;
+import sts2silent.patches.Patches;
 
 import static sts2silent.ModFile.makeID;
 
@@ -15,7 +15,7 @@ public class Untouchable extends AbstractEasyCard {
     public Untouchable() {
         super(ID, 2, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         baseBlock = 6;
-        SlyPatch.SlyField.sly.set(this, true);
+        Patches.SlyField.sly.set(this, true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

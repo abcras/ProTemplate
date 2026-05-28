@@ -4,13 +4,10 @@ import com.evacipated.cardcrawl.mod.stslib.actions.common.AllEnemyApplyPowerActi
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import sts2silent.cards.AbstractEasyCard;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import sts2silent.cards.AbstractEasyCard;
-import sts2silent.patches.SlyPatch;
+import sts2silent.patches.Patches;
 
-import static sts2silent.CharacterFile.Enums.Greener;
 import static sts2silent.ModFile.makeID;
 import static sts2silent.util.Wiz.*;
 
@@ -21,7 +18,7 @@ public class Haze extends AbstractEasyCard {
     public Haze() {
         super(ID, 3, CardType.SKILL, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         baseMagicNumber = magicNumber = 4;
-        SlyPatch.SlyField.sly.set(this, true);
+        Patches.SlyField.sly.set(this, true);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

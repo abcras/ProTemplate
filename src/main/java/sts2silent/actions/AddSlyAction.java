@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import sts2silent.patches.SlyPatch;
+import sts2silent.patches.Patches;
 
 public class AddSlyAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
@@ -35,7 +35,7 @@ public class AddSlyAction extends AbstractGameAction {
             CardGroup tmp = new CardGroup(CardGroupType.UNSPECIFIED);
 
             for (AbstractCard c : this.p.hand.group) {
-                if (c.type == CardType.SKILL && !(SlyPatch.SlyField.slyForTurn.get(c) || SlyPatch.SlyField.sly.get(c))) {
+                if (c.type == CardType.SKILL && !(Patches.SlyField.slyForTurn.get(c) || Patches.SlyField.sly.get(c))) {
                     tmp.addToTop(c);
                 }
             }
@@ -55,9 +55,9 @@ public class AddSlyAction extends AbstractGameAction {
                     //this.p.drawPile.removeCard(card);
                     //AbstractDungeon.player.hand.addToTop(card);
                     if (ForTheTurn) {
-                        SlyPatch.SlyField.slyForTurn.set(card, true);
+                        Patches.SlyField.slyForTurn.set(card, true);
                     } else {
-                        SlyPatch.SlyField.sly.set(card, true);
+                        Patches.SlyField.sly.set(card, true);
                     }
                     card.initializeDescription();
                     AbstractDungeon.player.hand.refreshHandLayout();
@@ -75,9 +75,9 @@ public class AddSlyAction extends AbstractGameAction {
                     c.unhover();
 
                     if (ForTheTurn) {
-                        SlyPatch.SlyField.slyForTurn.set(c, true);
+                        Patches.SlyField.slyForTurn.set(c, true);
                     } else {
-                        SlyPatch.SlyField.sly.set(c, true);
+                        Patches.SlyField.sly.set(c, true);
                     }
                     c.initializeDescription();
                     this.p.hand.refreshHandLayout();
