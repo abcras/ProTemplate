@@ -26,5 +26,28 @@
     "DESCRIPTIONS": [
       "When you play a Skill, it gains #ySly."
     ]
+  },
+  "${ModID}:OutbreakPower": {
+    "NAME": "Outbreak",
+    "DESCRIPTIONS": [
+      "Every ",
+      " times you apply #yPoison deal ",
+      " damage to ALL enemies."
+    ]
+  },
+  "${ModID}:SpeedsterPower": {
+    "NAME": "Speedster",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card during your turn, deal ",
+      " damage to ALL enemies."
+    ]
+  },
+  "${ModID}:WellLaidPlansPower": {
+    "NAME": "Well-Laid Plans",
+    "DESCRIPTIONS": [
+      "At the end of your turn, Retain up to ",
+      " card.",
+      " cards."
+    ]
   }
 }

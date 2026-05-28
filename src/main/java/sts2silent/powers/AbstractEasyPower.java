@@ -1,9 +1,11 @@
 package sts2silent.powers;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -19,6 +21,7 @@ public abstract class AbstractEasyPower extends AbstractPower {
     public static Color redColor2 = Color.RED.cpy();
     public static Color greenColor2 = Color.GREEN.cpy();
     public boolean canGoNegative2 = false;
+    protected float fontScale2 = 1.0F;
 
     private PowerStrings powerStrings = null;
 
@@ -48,6 +51,32 @@ public abstract class AbstractEasyPower extends AbstractPower {
 
         updateDescription();
     }
+    @Override
+    public void update(int slot){
+        super.update(slot);
+        updateSecondFontScale();
+    }
+    private void updateSecondFontScale() {
+        //super.updateFontScale();
+        if (this.fontScale2 != 1.0F) {
+            this.fontScale2 = MathUtils.lerp(this.fontScale2, 1.0F, Gdx.graphics.getDeltaTime() * 10.0F);
+            if (this.fontScale2 - 1.0F < 0.05F) {
+                this.fontScale2 = 1.0F;
+            }
+        }
+
+    }
+
+    public void reducePowerOfTwo(int reduceAmount) {
+        if (this.amount2 - reduceAmount <= 0) {
+            this.fontScale2 = 8.0F;
+            this.amount2 = 0;
+        } else {
+            this.fontScale2 = 8.0F;
+            this.amount2 -= reduceAmount;
+        }
+
+    }
 
     public void renderAmount(SpriteBatch sb, float x, float y, Color c) {
         super.renderAmount(sb, x, y, c);
@@ -59,11 +88,11 @@ public abstract class AbstractEasyPower extends AbstractPower {
                 c = greenColor2;
             }
 
-            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount2), x, y + 15.0F * Settings.scale, fontScale, c);
+            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount2), x, y + 15.0F * Settings.scale, fontScale2, c);
         } else if (amount2 < 0 && canGoNegative2) {
             redColor2.a = c.a;
             c = redColor2;
-            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount2), x, y + 15.0F * Settings.scale, fontScale, c);
+            FontHelper.renderFontRightTopAligned(sb, FontHelper.powerAmountFont, Integer.toString(amount2), x, y + 15.0F * Settings.scale, fontScale2, c);
         }
     }
 }

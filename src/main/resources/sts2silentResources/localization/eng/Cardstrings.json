@@ -236,5 +236,133 @@
   "${ModID}:MasterPlanner": {
     "NAME": "Master Planner",
     "DESCRIPTION": "When you play a Skill, it gains ${ModID}:Sly."
+  },
+  "${ModID}:KnifeTrap": {
+    "NAME": "Knife Trap",
+    "DESCRIPTION": "Play every Shiv in your Exhaust Pile on the enemy.",
+    "UPGRADE_DESCRIPTION": "Upgrade and play every Shiv in your Exhaust Pile on the enemy.",
+    "EXTENDED_DESCRIPTION": [
+      "NL (",
+      " Shiv)",
+      " Shivs)."
+    ]
+  },
+  "${ModID}:Backstab": {
+    "NAME": "Backstab",
+    "DESCRIPTION": "Innate. NL Deal !D! damage. NL Exhaust."
+  },
+  "${ModID}:Blur": {
+    "NAME": "Blur",
+    "DESCRIPTION": "Gain !B! Block. NL Block is not removed at the start of your next turn."
+  },
+  "${ModID}:BouncingFlask": {
+    "NAME": "Bouncing Flask",
+    "DESCRIPTION": "Apply 3 Poison to a random enemy !M! times."
+  },
+  "${ModID}:CalculatedGamble": {
+    "NAME": "Calculated Gamble",
+    "DESCRIPTION": "Discard your *Hand, then draw that many cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Discard your *Hand, then draw that many cards. NL Exhaust."
+  },
+  "${ModID}:Dash": {
+    "NAME": "Dash",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage."
+  },
+  "${ModID}:EscapePlan": {
+    "NAME": "Escape Plan",
+    "DESCRIPTION": "Draw 1 card. NL If you draw a Skill, gain !B! Block."
+  },
+  "${ModID}:Expertise": {
+    "NAME": "Expertise",
+    "DESCRIPTION": "Draw cards until have !M! in your *Hand."
+  },
+  "${ModID}:Expose": {
+    "NAME": "Expose",
+    "DESCRIPTION": "Remove all Artifact and Block from the enemy. NL Apply !M! Vulnerable. NL Exhaust."
+  },
+  "${ModID}:Finisher": {
+    "NAME": "Finisher",
+    "DESCRIPTION": "Deal !D! damage for each Attack played this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "NL (",
+      " Attack played)",
+      " Attacks played)."
+    ]
+  },
+  "${ModID}:Flechettes": {
+    "NAME": "Fléchettes",
+    "DESCRIPTION": "Deal !D! damage for each Skill in your *Hand.",
+    "EXTENDED_DESCRIPTION": [
+      "NL (You have ",
+      " Skill)",
+      " Skills)."
+    ]
+  },
+  "${ModID}:Haze": {
+    "NAME": "Haze",
+    "DESCRIPTION": "${ModID}:Sly. NL Apply !M! Poison to ALL enemies."
+  },
+  "${ModID}:MementoMori": {
+    "NAME": "Memento Mori",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for each card discarded this turn."
+  },
+  "${ModID}:Mirage": {
+    "NAME": "Mirage",
+    "DESCRIPTION": "Gain Block equal to Poison on ALL enemies. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Gain Block equal to Poison on ALL enemies. NL ",
+      "(Gain !B! Block)",
+      " NL Exhaust."
+    ]
+  },
+  "${ModID}:Outbreak": {
+    "NAME": "Outbreak",
+    "DESCRIPTION": "Every 3 times you apply Poison, deal !M! damage to ALL enemies."
+  },
+  "${ModID}:Pinpoint": {
+    "NAME": "Pinpoint",
+    "DESCRIPTION": "Deal !D! damage. NL Costs 1 less !E! for each Skill played this turn."
+  },
+  "${ModID}:Pounce": {
+    "NAME": "Pounce",
+    "DESCRIPTION": "Deal !D! damage. NL The next Skill you play costs 0 !E!."
+  },
+  "${ModID}:PreciseCut": {
+    "NAME": "Precise Cut",
+    "DESCRIPTION": "Deal !D! damage. NL Deals 2 less damage for each other card in your *Hand."
+  },
+  "${ModID}:Reflex": {
+    "NAME": "Reflex",
+    "DESCRIPTION": "${ModID}:Sly. NL Draw !M! cards."
+  },
+  "${ModID}:Skewer": {
+    "NAME": "Skewer",
+    "DESCRIPTION": "Deal !D! damage X times.",
+    "EXTENDED_DESCRIPTION": [
+      "(",
+      " times)"
+    ]
+  },
+  "${ModID}:Speedster": {
+    "NAME": "Speedster",
+    "DESCRIPTION": "Whenever you draw a card during your turn, deal !M! damage to ALL enemies."
+  },
+  "${ModID}:Strangle": {
+    "NAME": "Strangle",
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you play a card this turn, the enemy loses !M! HP."
+  },
+  "${ModID}:UpMySleeve": {
+    "NAME": "Up My Sleeve",
+    "DESCRIPTION": "Add 3 Shivs into your *Hand. NL Reduce this card's costs by 1."
+  },
+  "${ModID}:Tactician": {
+    "NAME": "Tactician",
+    "DESCRIPTION": "${ModID}:Sly. NL Gain !E!.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Sly. NL Gain !E! !E!."
+  },
+  "${ModID}:WellLaidPlans": {
+    "NAME": "Well-Laid Plans",
+    "DESCRIPTION": "At the end of your turn, Retain up to !M! card.",
+    "UPGRADE_DESCRIPTION": "At the end of your turn, Retain up to !M! cards."
   }
 }
