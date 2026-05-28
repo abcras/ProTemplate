@@ -2,15 +2,24 @@ package sts2silent.patches;
 
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
+import javassist.*;
 import sts2silent.actions.UseCardActionFromDiscard;
+import javassist.expr.ExprEditor;
+
+import java.util.Objects;
 
 import static sts2silent.ModFile.makeID;
 import static sts2silent.ModFile.modID;
@@ -49,6 +58,73 @@ public class Patches {
             return res || __result;
         }
     }
+
+
+    /*@SpireInstrumentPatch
+    public static ExprEditor Foobar()
+    {
+        return new ExprEditor() {
+            CtClass point;
+
+            {
+                try {
+                    point = ClassPool.getDefault().get("WeakPower");
+                } catch (NotFoundException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+
+            CtMethod m;
+
+            {
+                try {
+                    m = CtNewMethod.make(
+                            "public float atDamageReceive(float damage, DamageInfo.DamageType type) " +
+                                    "{ " +
+                                    "return __instance.owner != null && !__instance.owner.isPlayer &&" +
+                                    "AbstractDungeon.player.hasPower(makeID(\"TrackingPower\"))"+
+                                    "? __damage * AbstractDungeon.player.getPower(makeID(\"TrackingPower\")).amount"+
+                                    ": __damage * 1;"+
+                                    "}",
+                            point);
+                } catch (CannotCompileException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+    }*/
+
+    @SpirePatch(clz = AbstractPower.class, method = "atDamageReceive", paramtypez = {float.class, DamageInfo.DamageType.class})
+    public static class extendWeakPowerToWorkWithTrackingMethod{
+
+        @SpirePostfixPatch
+        public static float Postfix(AbstractPower __instance, float __damage, DamageInfo.DamageType __type) {
+
+            if(!Objects.equals(__instance.ID, WeakPower.POWER_ID))
+            {
+                return __damage;
+            }
+            if (__type == DamageInfo.DamageType.NORMAL) {
+                    return __instance.owner != null && !__instance.owner.isPlayer &&
+                            AbstractDungeon.player.hasPower(makeID("TrackingPower"))
+                            ? __damage * AbstractDungeon.player.getPower(makeID("TrackingPower")).amount
+                            : __damage * 1;
+            } else {
+                return __damage;
+            }
+        }
+       /* public static float Replace(float __damage, DamageInfo.DamageType __type, WeakPower __instance) {
+            if (__type == DamageInfo.DamageType.NORMAL) {
+                return __instance.owner != null && !__instance.owner.isPlayer &&
+                        AbstractDungeon.player.hasPower(makeID("TrackingPower"))
+                        ? __damage * AbstractDungeon.player.getPower(makeID("TrackingPower")).amount
+                        : __damage * 1;
+            } else {
+                return __damage;
+            }
+        }*/
+    }
+
 
     /*public void applyStartOfTurnCards() {
         for(AbstractCard c : this.drawPile.group) {
