@@ -365,5 +365,9 @@
     "NAME": "Well-Laid Plans",
     "DESCRIPTION": "At the end of your turn, Retain up to !M! card.",
     "UPGRADE_DESCRIPTION": "At the end of your turn, Retain up to !M! cards."
+  },
+  "${ModID}:Tracking": {
+    "NAME": "Tracking",
+    "DESCRIPTION": "Weak enemies take double damage from Attacks."
   }
 }

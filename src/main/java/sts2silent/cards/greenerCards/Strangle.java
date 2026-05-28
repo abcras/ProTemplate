@@ -1,4 +1,4 @@
-﻿package sts2silent.cards.greenerCards;
+package sts2silent.cards.greenerCards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.ChokePower;

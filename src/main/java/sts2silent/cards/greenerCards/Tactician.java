@@ -1,4 +1,4 @@
-﻿package sts2silent.cards.greenerCards;
+package sts2silent.cards.greenerCards;
 
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import sts2silent.cards.AbstractEasyCard;
