@@ -72,5 +72,33 @@
       " additional time.",
       " additional times."
     ]
+  },
+  "${ModID}:CorrosiveWavePower": {
+    "NAME": "Corrosive Wave",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card this turn, apply ",
+      " #yPoison to ALL enemies."
+    ]
+  },
+  "${ModID}:SerpentFormPower": {
+    "NAME": "Serpent Form",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, deal ",
+      " damage to a random enemy."
+    ]
+  },
+  "${ModID}:ShadowmeldPower": {
+    "NAME": "Shadowmeld",
+    "DESCRIPTIONS": [
+      "Double your Block gain this turn."
+    ]
+  },
+  "${ModID}:TheHuntPower": {
+    "NAME": "The Hunt",
+    "DESCRIPTIONS": [
+      "Receive ",
+      " extra card reward.",
+      " extra card rewards."
+    ]
   }
 }

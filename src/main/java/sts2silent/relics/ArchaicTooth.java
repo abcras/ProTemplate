@@ -1,18 +1,12 @@
 package sts2silent.relics;
 
-import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.curses.CurseOfTheBell;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import sts2silent.CharacterFile;
-import sts2silent.cards.greenerCards.Neutralize;
-import sts2silent.cards.greenerCards.Suppress;
+import sts2silent.cards.greenerCards.base.Neutralize;
+import sts2silent.cards.greenerCards.rare_ancient.Suppress;
 
 import static sts2silent.ModFile.makeID;
 

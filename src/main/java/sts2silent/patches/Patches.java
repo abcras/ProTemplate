@@ -1,16 +1,21 @@
 package sts2silent.patches;
 
+import basemod.ReflectionHacks;
+import basemod.helpers.CardBorderGlowManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.PoisonLoseHpAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -18,12 +23,17 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rewards.RewardItem;
+import com.megacrit.cardcrawl.rewards.RewardSave;
+import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
+import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
 import javassist.*;
 import sts2silent.actions.UseCardActionFromDiscard;
 import javassist.expr.ExprEditor;
 import sts2silent.powers.AccelerantPower;
+import sts2silent.util.HuntCardReward;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -150,11 +160,42 @@ public class Patches {
 
     @SpirePatch(clz = HandCardSelectScreen.class, method = "updateHand")
     public static class makeSlyCardsGlowDuringDiscardSelectionPatch {
+        public static void Prefix(HandCardSelectScreen __instance, CardGroup ___hand, boolean ___forTransform, boolean ___forUpgrade) {
+            if (___forTransform || ___forUpgrade) {
+                return;
+            }
+
+
+            /*CardBorderGlowManager.addGlowInfo(new CardBorderGlowManager.GlowInfo() {
+                @Override
+                public boolean test(AbstractCard card) {
+                    //CardBorderGlowManager.
+                    return (SlyField.slyForTurn.get(card) || SlyField.sly.get(card));
+                }
+
+                @Override
+                public Color getColor(AbstractCard card) {
+                    return Color.GOLD.cpy();
+                }
+
+                @Override
+                public String glowID() {
+                    return makeID("glowDuringDiscard");
+                    //return a string to be used as a unique ID for this glow.
+                    //It's recommended to follow the usual modding convention of "modname:name"
+                }
+            });*/
+        }
+
         public static void Postfix(HandCardSelectScreen __instance, CardGroup ___hand, boolean ___forTransform, boolean ___forUpgrade) {
 
             if (___forTransform || ___forUpgrade) {
                 return;
             }
+
+
+            /*CardBorderGlowManager.removeGlowInfo(makeID("glowDuringDiscard"));*/
+
             //if()
             for (AbstractCard c : ___hand.group) {
                 if ((SlyField.slyForTurn.get(c) || SlyField.sly.get(c)) && !c.isGlowing) {
@@ -237,6 +278,7 @@ public class Patches {
                 poisonAmt[0] -= Math.min((AbstractDungeon.player.getPower(makeID("AccelerantPower")).amount), __instance.getPower("Poison").amount);
             }
         }
+
         private static class Locator extends SpireInsertLocator {
             public int[] Locate(CtBehavior ctMethodToPatch) throws CannotCompileException, PatchingException {
 
@@ -248,4 +290,155 @@ public class Patches {
             }
         }
     }
+
+    public static int totalCardsDrawnThisCombat = 0;
+
+    /*@SpirePatch(clz = GameActionManager.class, method = SpirePatch.CONSTRUCTOR)
+    public static class AddingExtraTrackingForMurder {
+        int totalCardsDrawnThisCombat = 0;
+        public static void Postfix(GameActionManager __instance)
+        {
+            //ReflectionHacks.setPrivateStatic(GameActionManager.class, "totalCardsDrawnThisCombat", 0);
+        }
+    }*/
+
+    @SpirePatch(clz = DrawCardAction.class, method = SpirePatch.CONSTRUCTOR, paramtypez = {AbstractCreature.class, int.class, boolean.class})
+    public static class TrackingDrawInDrawCardAction {
+        public static void Postfix(DrawCardAction __instance) {
+            //int temp = (int)ReflectionHacks.getPrivateStatic(GameActionManager.class, "totalCardsDrawnThisCombat") + __instance.amount;
+            Patches.totalCardsDrawnThisCombat += Math.min(__instance.amount, AbstractDungeon.player.drawPile.size() + AbstractDungeon.player.discardPile.size());
+            //ReflectionHacks.setPrivateStatic(GameActionManager.class, "totalCardsDrawnThisCombat", temp);
+        }
+    }
+
+    /*@SpirePatch(
+            clz = CardCrawlGame.class,
+            method = "loadPostCombat"
+    )
+    public static class FixCardRewardsNotGettingSaved {
+        public static boolean skipFirst = true;
+
+        public static void Postfix(CardCrawlGame __instance, SaveFile saveFile) {
+            if (!saveFile.smoked) {
+
+
+                for (RewardSave i : saveFile.combat_rewards) {
+                    switch (i.type) {
+                        case "CARD":
+                            if (skipFirst) {
+                                skipFirst = false;
+                                break;
+                            }
+                            AbstractDungeon.getCurrRoom().addCardToRewards();
+                            break;
+                        case "GOLD":
+                        case "RELIC":
+                        case "POTION":
+                        case "STOLEN_GOLD":
+                        case "SAPPHIRE_KEY":
+                        case "EMERALD_KEY":
+                        default:
+                    }
+                }
+                skipFirst = true;
+            }
+        }
+    }
+*/
+
+    /*
+    * public DrawCardAction(AbstractCreature source, int amount, boolean endTurnDraw) {
+        this.shuffleCheck = false;
+        this.clearDrawHistory = true;
+        this.followUpAction = null;
+        if (endTurnDraw) {
+            AbstractDungeon.topLevelEffects.add(new PlayerTurnEffect());
+        }
+
+        this.setValues(AbstractDungeon.player, source, amount);
+        this.actionType = ActionType.DRAW;
+        if (Settings.FAST_MODE) {
+            this.duration = Settings.ACTION_DUR_XFAST;
+        } else {
+            this.duration = Settings.ACTION_DUR_FASTER;
+        }
+
+    }*/
+
+    @SpirePatch(clz = AbstractDungeon.class, method = "nextRoomTransitionStart")
+    public static class cleatHuntLoadedValueOnRoomTransition {
+        public static void Postfix(/*AbstractDungeon __instance*/) {
+
+            HuntCardReward.numberOfCardRewardsToRegenerate = 0;
+
+        }
+    }
+    /* RESET THE HUNT SAVE STUFF HERE:
+    * public static void nextRoomTransitionStart() {
+        fadeOut();
+        waitingOnFadeOut = true;
+        overlayMenu.proceedButton.hide();
+        if (ModHelper.isModEnabled("Terminal")) {
+            player.decreaseMaxHealth(1);
+        }
+
+    }*/
+
+    @SpirePatch(clz = CombatRewardScreen.class, method = "setupItemReward")
+    public static class addHuntCardToRewardOnLoad {
+        public static void Postfix(CombatRewardScreen __instance) {
+
+            if ((AbstractDungeon.getCurrRoom().event == null || AbstractDungeon.getCurrRoom().event != null && !AbstractDungeon.getCurrRoom().event.noCardsInRewards) && !(AbstractDungeon.getCurrRoom() instanceof TreasureRoom) && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+
+
+                if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom || (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) || (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
+                    for (int i = 0; i < HuntCardReward.numberOfCardRewardsToRegenerate; i++) {
+                        RewardItem cardReward = new RewardItem();
+                        if (!cardReward.cards.isEmpty()) {
+                            __instance.rewards.add(cardReward);
+                        }
+                    }
+                }
+
+            }
+
+            //AbstractDungeon.overlayMenu.proceedButton.show();
+            __instance.hasTakenAll = false;
+            __instance.positionRewards();
+
+        }
+    }
+
+    /*
+    * public void setupItemReward() {
+        this.rewardAnimTimer = 0.2F;
+        InputHelper.justClickedLeft = false;
+        this.rewards = new ArrayList(AbstractDungeon.getCurrRoom().rewards);
+        if ((AbstractDungeon.getCurrRoom().event == null || AbstractDungeon.getCurrRoom().event != null && !AbstractDungeon.getCurrRoom().event.noCardsInRewards) && !(AbstractDungeon.getCurrRoom() instanceof TreasureRoom) && !(AbstractDungeon.getCurrRoom() instanceof RestRoom)) {
+            if (ModHelper.isModEnabled("Vintage") && AbstractDungeon.getCurrRoom() instanceof MonsterRoom) {
+                if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+                    RewardItem cardReward = new RewardItem();
+                    if (cardReward.cards.size() > 0) {
+                        this.rewards.add(cardReward);
+                    }
+                }
+            } else {
+                RewardItem cardReward = new RewardItem();
+                if (cardReward.cards.size() > 0) {
+                    this.rewards.add(cardReward);
+                }
+
+                if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom && AbstractDungeon.player.hasRelic("Prayer Wheel") && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) && !(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
+                    cardReward = new RewardItem();
+                    if (cardReward.cards.size() > 0) {
+                        this.rewards.add(cardReward);
+                    }
+                }
+            }
+        }
+
+        AbstractDungeon.overlayMenu.proceedButton.show();
+        this.hasTakenAll = false;
+        this.positionRewards();
+    }*/
 }

@@ -19,10 +19,10 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import sts2silent.cards.greenerCards.Defend;
-import sts2silent.cards.greenerCards.Neutralize;
-import sts2silent.cards.greenerCards.Strike;
-import sts2silent.cards.greenerCards.Survivor;
+import sts2silent.cards.greenerCards.base.Defend;
+import sts2silent.cards.greenerCards.base.Neutralize;
+import sts2silent.cards.greenerCards.base.Strike;
+import sts2silent.cards.greenerCards.base.Survivor;
 import sts2silent.relics.RingOfTheSnake2;
 
 import java.util.ArrayList;

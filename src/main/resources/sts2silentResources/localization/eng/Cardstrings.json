@@ -321,7 +321,7 @@
   },
   "${ModID}:Pinpoint": {
     "NAME": "Pinpoint",
-    "DESCRIPTION": "Deal !D! damage. NL Costs 1 less [E] for each Skill played this turn."
+    "DESCRIPTION": "Deal !D! damage. NL Costs 1 less [G] for each Skill played this turn."
   },
   "${ModID}:Pounce": {
     "NAME": "Pounce",
@@ -358,8 +358,8 @@
   },
   "${ModID}:Tactician": {
     "NAME": "Tactician",
-    "DESCRIPTION": "${ModID}:Sly. NL Gain [E].",
-    "UPGRADE_DESCRIPTION": "${ModID}:Sly. NL Gain [E] [E]."
+    "DESCRIPTION": "${ModID}:Sly. NL Gain [G].",
+    "UPGRADE_DESCRIPTION": "${ModID}:Sly. NL Gain [G] [G]."
   },
   "${ModID}:WellLaidPlans": {
     "NAME": "Well-Laid Plans",
@@ -370,9 +370,84 @@
     "NAME": "Tracking",
     "DESCRIPTION": "Weak enemies take double damage from Attacks."
   },
+  "${ModID}:Abrasive": {
+    "NAME": "Abrasive",
+    "DESCRIPTION": "${ModID}:Sly. NL Gain 1 Dexterity. NL Gain !M! Thorns."
+  },
   "${ModID}:Accelerant": {
     "NAME": "Accelerant",
     "DESCRIPTION": "Poison is triggered !M! additional time.",
-    "UPGRADE_DESCRIPTION": "Poison is triggered !M! additional times"
+    "UPGRADE_DESCRIPTION": "Poison is triggered !M! additional times."
+  },
+  "${ModID}:Adrenaline": {
+    "NAME": "Adrenaline",
+    "DESCRIPTION": "Gain [G]. NL Draw 2 cards. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [G][G]. NL Draw 2 cards. NL Exhaust."
+  },
+  "${ModID}:Afterimage": {
+    "NAME": "Afterimage",
+    "DESCRIPTION": "Whenever you play a card, gain !M! Block.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play a card, gain !M! Block."
+  },
+  "${ModID}:Assassinate": {
+    "NAME": "Assassinate",
+    "DESCRIPTION": "Innate. NL Deal !D!. NL Apply !M! Vulnerable. NL Exhaust."
+  },
+  "${ModID}:BulletTime": {
+    "NAME": "Bullet Time",
+    "DESCRIPTION": "You cannot draw additional cards this turn. ALL cards in your *Hand are free to play this turn."
+  },
+  "${ModID}:Burst": {
+    "NAME": "Burst",
+    "DESCRIPTION": "This turn, your next Skill is played an extra time.",
+    "UPGRADE_DESCRIPTION": "This turn, your next !M! Skills are played an extra time."
+  },
+  "${ModID}:CorrosiveWave": {
+    "NAME": "Corrosive Wave",
+    "DESCRIPTION": "Whenever you draw a card this turn, apply !M! Poison to ALL enemies."
+  },
+  "${ModID}:GrandFinale": {
+    "NAME": "Grand Finale",
+    "DESCRIPTION": "Can only be played if there are no cards in your Draw Pile. Deal !D! damage to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "My draw pile must be #rEmpty"
+    ]
+  },
+  "${ModID}:Murder": {
+    "NAME": "Murder",
+    "DESCRIPTION": "Deal !D! damage. Deals !M! additional damage for each card drawn this combat."
+  },
+  "${ModID}:Nightmare": {
+    "NAME": "Nightmare",
+    "DESCRIPTION": "Choose a card. NL Next turn, add 3 copies of that card into your *Hand. NL Exhaust."
+  },
+  "${ModID}:SerpentForm": {
+    "NAME": "Serpent Form",
+    "DESCRIPTION": "Whenever you play a card, deal !M! damage to a random enemy."
+  },
+  "${ModID}:ShadowStep": {
+    "NAME": "Shadow Step",
+    "DESCRIPTION": "Discard your *Hand. NL Next turn, Attacks deal double damage."
+  },
+  "${ModID}:Shadowmeld": {
+    "NAME": "Shadowmeld",
+    "DESCRIPTION": "Double your Block gain this turn."
+  },
+  "${ModID}:StormOfSteel": {
+    "NAME": "Storm of Steel",
+    "DESCRIPTION": "Discard your *Hand. Add 1 Shiv into your *Hand for each card discarded.",
+    "UPGRADE_DESCRIPTION": "Discard your *Hand. NL Add 1 Shiv+ into your *Hand for each card discarded."
+  },
+  "${ModID}:TheHunt": {
+    "NAME": "The Hunt",
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, gain an additional card reward. NL Exhaust."
+  },
+  "${ModID}:ToolsOfTheTrade": {
+    "NAME": "Tools of the Trade",
+    "DESCRIPTION": "At the start of your turn, draw 1 card and discard 1 card."
+  },
+  "${ModID}:LegSweep": {
+    "NAME": "Leg Sweep",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Weak."
   }
 }

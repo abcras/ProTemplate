@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -51,7 +52,7 @@ public class PhantomBladesPower extends AbstractEasyPower {
     @Override
     public float atDamageGive(float damage, DamageInfo.DamageType type, AbstractCard card) {
         //return super.atDamageGive(damage, type, card);
-        if (increaseDamage && Objects.equals(card.cardID, Shiv2.ID)) {
+        if (increaseDamage && (Objects.equals(card.cardID, Shiv2.ID) || (Objects.equals(card.cardID, Shiv.ID)))) {
             //this.flash();
             //this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "Vigor"));
             //this.addToBot();
@@ -67,7 +68,7 @@ public class PhantomBladesPower extends AbstractEasyPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (increaseDamage && Objects.equals(card.cardID, Shiv2.ID)) {
+        if (increaseDamage && (Objects.equals(card.cardID, Shiv2.ID ) || (Objects.equals(card.cardID, Shiv.ID)))) {
             this.flash();
             increaseDamage = false;
             //this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "Vigor"));

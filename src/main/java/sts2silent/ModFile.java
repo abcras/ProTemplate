@@ -2,6 +2,7 @@ package sts2silent;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
+import basemod.abstracts.CustomSavableRaw;
 import basemod.abstracts.DynamicVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -26,6 +27,7 @@ import sts2silent.cards.AbstractEasyCard;
 import sts2silent.cards.cardvars.AbstractEasyDynamicVariable;
 import sts2silent.potions.AbstractEasyPotion;
 import sts2silent.relics.AbstractEasyRelic;
+import sts2silent.util.HuntCardReward;
 import sts2silent.util.ProAudio;
 import java.nio.charset.StandardCharsets;
 
@@ -98,6 +100,7 @@ public class ModFile implements
                 ATTACK_S_ART, SKILL_S_ART, POWER_S_ART, CARD_ENERGY_S,
                 ATTACK_L_ART, SKILL_L_ART, POWER_L_ART,
                 CARD_ENERGY_L, TEXT_ENERGY);
+        BaseMod.addSaveField("huntCardReward", new HuntCardReward());
     }
 
     public static String makePath(String resourcePath) {
