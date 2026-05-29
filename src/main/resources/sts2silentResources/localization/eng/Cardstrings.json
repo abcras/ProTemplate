@@ -369,5 +369,10 @@
   "${ModID}:Tracking": {
     "NAME": "Tracking",
     "DESCRIPTION": "Weak enemies take double damage from Attacks."
+  },
+  "${ModID}:Accelerant": {
+    "NAME": "Accelerant",
+    "DESCRIPTION": "Poison is triggered !M! additional time.",
+    "UPGRADE_DESCRIPTION": "Poison is triggered !M! additional times"
   }
 }

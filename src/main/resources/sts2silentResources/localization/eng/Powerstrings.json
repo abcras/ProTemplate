@@ -64,5 +64,13 @@
       "#yWeak enemies take ",
       " times damage from Attacks."
     ]
+  },
+  "${ModID}:AccelerantPower": {
+    "NAME": "Accelerant",
+    "DESCRIPTIONS": [
+      "#yPoison is triggered ",
+      " additional time.",
+      " additional times."
+    ]
   }
 }
