@@ -1,8 +1,6 @@
 package sts2silent.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.EmptyDeckShuffleAction;
-import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
 import com.megacrit.cardcrawl.actions.utility.UnlimboAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -11,9 +9,9 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class PlayTopCardFromLimbo extends AbstractGameAction {
+public class PlayTopCardFromLimboAction extends AbstractGameAction {
 
-    public PlayTopCardFromLimbo(AbstractCreature target) {
+    public PlayTopCardFromLimboAction(AbstractCreature target) {
         this.duration = Settings.ACTION_DUR_FAST;
         this.actionType = ActionType.WAIT;
         this.source = AbstractDungeon.player;

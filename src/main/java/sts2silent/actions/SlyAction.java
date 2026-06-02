@@ -1,6 +1,5 @@
 package sts2silent.actions;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,9 +8,8 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class UseCardActionFromDiscard extends AbstractGameAction {
+public class SlyAction extends UseCardAction {
     private final AbstractCard targetCard;
     public AbstractCreature target;
     public boolean exhaustCard;
@@ -19,80 +17,36 @@ public class UseCardActionFromDiscard extends AbstractGameAction {
     public boolean reboundCard;
     private static final float DUR = 0.15F;
 
-    public UseCardActionFromDiscard(AbstractCard card, AbstractCreature target) {
-        this.target = null;
+    public SlyAction(AbstractCard card, AbstractCreature target) {
+        super(card, target);
         this.reboundCard = false;
         this.targetCard = card;
-        this.target = target;
-        if (card.exhaustOnUseOnce || card.exhaust) {
-            this.exhaustCard = true;
-        }
+        actionType = ActionType.USE;
 
-        this.setValues(AbstractDungeon.player, (AbstractCreature)null, 1);
+        this.setValues(AbstractDungeon.player, target, 1);
         this.duration = 0.15F;
-
-        for(AbstractPower p : AbstractDungeon.player.powers) {
-            if (!card.dontTriggerOnUseCard) {
-                p.onUseCard(card, new UseCardAction(targetCard, target));
-            }
-        }
-
-        for(AbstractRelic r : AbstractDungeon.player.relics) {
-            if (!card.dontTriggerOnUseCard) {
-                r.onUseCard(card, new UseCardAction(targetCard, target));
-            }
-        }
-
-        for(AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (!card.dontTriggerOnUseCard) {
-                c.triggerOnCardPlayed(card);
-            }
-        }
-
-        for(AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (!card.dontTriggerOnUseCard) {
-                c.triggerOnCardPlayed(card);
-            }
-        }
-
-        for(AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (!card.dontTriggerOnUseCard) {
-                c.triggerOnCardPlayed(card);
-            }
-        }
-
-        for(AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            for(AbstractPower p : m.powers) {
-                if (!card.dontTriggerOnUseCard) {
-                    p.onUseCard(card, new UseCardAction(targetCard, target));
-                }
-            }
-        }
-
-        if (this.exhaustCard) {
-            this.actionType = ActionType.EXHAUST;
-        } else {
-            this.actionType = ActionType.USE;
-        }
-
     }
 
-    public UseCardActionFromDiscard(AbstractCard targetCard) {
-        this(targetCard, (AbstractCreature)null);
+    public SlyAction(AbstractCard targetCard) {
+        this(targetCard, (AbstractCreature) null);
     }
 
     public void update() {
-        if (this.duration == 0.15F) {
-            for(AbstractPower p : AbstractDungeon.player.powers) {
+        if (this.duration == 0.15F && !this.isDone) {
+            System.out.println("From UseCardFromDiscardAction");
+            for (AbstractPower p : AbstractDungeon.player.powers) {
                 if (!this.targetCard.dontTriggerOnUseCard) {
-                    p.onAfterUseCard(this.targetCard, new UseCardAction(targetCard, target));
+                    //targetCard.dontTriggerOnUseCard = true;
+                    targetCard.dontTriggerOnUseCard = true;
+                    p.onAfterUseCard(this.targetCard, this);
                 }
             }
 
-            for(AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                for(AbstractPower p : m.powers) {
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
+                for (AbstractPower p : m.powers) {
                     if (!this.targetCard.dontTriggerOnUseCard) {
-                        p.onAfterUseCard(this.targetCard, new UseCardAction(targetCard, target));
+                        targetCard.dontTriggerOnUseCard = true;
+                        p.onAfterUseCard(this.targetCard, this);
                     }
                 }
             }

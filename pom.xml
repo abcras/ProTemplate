@@ -4,9 +4,25 @@
     <groupId>UnimportantInfo</groupId>
 
     <artifactId>STS2Silent</artifactId>
-    <version>0.1.0</version>
+    <version>0.8.0</version>
     <name>STS2 Silent</name>
-    <description>An implementation of StS2s Silent</description>
+    <description>An implementation of StS2s Silent in sts1. This mod is up to date with the Beta v0.106.1 of Slay the Spire.
+
+        This mod has all the bells and whistles of the cards for StS2 Silent, this mod DOES NOT contain any of the animation work for the Silent in 2.
+
+        Features that will be worked on:
+        * Better card backgrounds/frames
+        * Better energy pool icon
+        * Better energy symbol for card descriptions
+
+    Current changes from v0.106.1 for Sts2Silent:
+        * Pounce deals 14(20) damage
+        * Follow Through removed
+        * Scare introduced at Uncommon
+        * Predator updated to common
+
+    Happy Slaying!
+    </description>
     <!-- Change the above for mod information. -->
 
     <properties>

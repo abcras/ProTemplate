@@ -1,13 +1,10 @@
 package sts2silent.patches;
 
-import basemod.ReflectionHacks;
-import basemod.helpers.CardBorderGlowManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.PoisonLoseHpAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,24 +12,17 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.PoisonPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.rewards.RewardItem;
-import com.megacrit.cardcrawl.rewards.RewardSave;
 import com.megacrit.cardcrawl.rooms.*;
-import com.megacrit.cardcrawl.saveAndContinue.SaveFile;
 import com.megacrit.cardcrawl.screens.CombatRewardScreen;
 import com.megacrit.cardcrawl.screens.select.HandCardSelectScreen;
 import javassist.*;
-import sts2silent.actions.UseCardActionFromDiscard;
-import javassist.expr.ExprEditor;
-import sts2silent.powers.AccelerantPower;
+import sts2silent.actions.SlyAction;
 import sts2silent.util.HuntCardReward;
 
 import java.util.ArrayList;
@@ -223,12 +213,13 @@ public class Patches {
         public static void Postfix(AbstractCard __instance) {
 
             if (SlyField.sly.get(__instance) || SlyField.slyForTurn.get(__instance)) {
+                System.out.println("Sly!");
                 AbstractMonster m = AbstractDungeon.getRandomMonster();
                 if (!m.isDead && !m.escaped) {
                     if (!AbstractDungeon.player.endTurnQueued) {
                         __instance.use(AbstractDungeon.player, m);
 
-                        AbstractDungeon.actionManager.addToBottom(new UseCardActionFromDiscard(__instance, m));
+                        AbstractDungeon.actionManager.addToBottom(new SlyAction(__instance, m));
                     }
                 }
             }

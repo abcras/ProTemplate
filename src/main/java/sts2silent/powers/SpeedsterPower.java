@@ -25,8 +25,20 @@ public class SpeedsterPower extends AbstractEasyPower {
         DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     }
 
+    boolean drawDealsDamage = true;
+
     public SpeedsterPower(AbstractCreature owner, int amount) {
         super(makeID("SpeedsterPower"), NAME, PowerType.BUFF, false, owner, amount);
+    }
+
+    @Override
+    public void atStartOfTurn() {
+        drawDealsDamage = false;
+    }
+
+    @Override
+    public void atStartOfTurnPostDraw() {
+        drawDealsDamage = true;
     }
 
     @Override

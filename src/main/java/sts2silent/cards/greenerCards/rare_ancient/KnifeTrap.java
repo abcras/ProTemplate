@@ -3,7 +3,7 @@ package sts2silent.cards.greenerCards.rare_ancient;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import sts2silent.actions.PlayTopCardFromLimbo;
+import sts2silent.actions.PlayTopCardFromLimboAction;
 import sts2silent.cards.AbstractEasyCard;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -86,7 +86,7 @@ public class KnifeTrap extends AbstractEasyCard {
                 i--;
                 //c.exhaustOnUseOnce = true;
                 //c.use(p, m);
-                atb(new PlayTopCardFromLimbo(m));
+                atb(new PlayTopCardFromLimboAction(m));
             }
         }
 
