@@ -32,6 +32,6 @@ public class Untouchable extends AbstractEasyCard {
     }*/
 
     public void upp() {
-        upgradeBlock(2);
+        upgradeBlock(3);
     }
 }

@@ -31,7 +31,7 @@ public class Shiv2 extends AbstractEasyCard {
         super(ID, 0, CardType.ATTACK, CardRarity.SPECIAL, CardTarget.ENEMY, CardColor.COLORLESS);
         this.exhaust = true;
         if (inkyEnhancement) {
-            baseDamage = newBaseDamage = 6;
+            baseDamage = newBaseDamage = 5;
             this.inky = true;
 
             this.name = "Inky " + this.name;
